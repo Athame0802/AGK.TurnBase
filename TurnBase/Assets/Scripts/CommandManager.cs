@@ -69,7 +69,7 @@ public class CommandManager : NetworkBehaviour
     [Rpc(SendTo.SpecifiedInParams)]
     private void SendHintRpc(int numIndex, int number, RpcParams rpcParams = default)
     {
-        hintText.text = $"힌트 : {numIndex}번째 자리는 {number}";
+        hintText.text = $"힌트 : {numIndex + 1}번째 자리는 {number}";
     }
 
     [Rpc(SendTo.Server)]
@@ -83,8 +83,9 @@ public class CommandManager : NetworkBehaviour
     [Rpc(SendTo.SpecifiedInParams)]
     private void SendHideNumberRpc(int numIndex, RpcParams rpcParams = default)
     {
+        D.Log("[Command] 상대의 방해가 들어옴!");
         hidePanel.SetActive(true);
-        hidePanel.transform.position = hideLocations[numIndex];
+        hidePanel.transform.localPosition = hideLocations[numIndex];
     }
 
     [Rpc(SendTo.Server)]
