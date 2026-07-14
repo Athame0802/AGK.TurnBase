@@ -44,8 +44,6 @@ public class TurnManager : NetworkBehaviour
 
     public void GetAllClientIds(List<ulong> clientIdList)
     {
-        if (!IsServer) return;
-
         clientIdList.Clear();
 
         foreach (ulong clientId in NetworkManager.Singleton.ConnectedClientsIds)

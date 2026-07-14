@@ -5,7 +5,7 @@ using Cysharp.Threading.Tasks;
 
 public class ConnectUI : NetworkBehaviour
 {
-    private ushort port = 12345;
+    private ushort port = 12346;
     private string ipAddress = "127.0.0.1";
     private int inputDigit = 4;
 
